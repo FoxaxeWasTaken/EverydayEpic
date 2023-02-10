@@ -1,1 +1,1 @@
-# EverydayEpic
+# EpitechJam
