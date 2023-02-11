@@ -7,8 +7,10 @@
 
 #include "Story.hpp"
 
-void createStory()
+ee::Story *createStory()
 {
+
+    int random_value = rand() % 3;
 
     /* Ville */
         /* First part*/
@@ -310,4 +312,8 @@ void createStory()
 
     story76.setAChoicePtr(std::make_shared<ee::Story>(story78));
     story76.setBChoicePtr(std::make_shared<ee::Story>(story79));
+
+
+    ee::Story start[3] = {story1, story_farm, story51};
+    return &(start[random_value]);
 }
