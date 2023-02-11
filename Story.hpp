@@ -26,10 +26,10 @@ namespace ee {
             std::string getSituation() const;
             std::string getAChoice() const;
             std::string getBChoice() const;
-            std::shared_ptr<Story> getAChoicePtr() const;
-            void setAChoicePtr(std::shared_ptr<Story> AChoicePtr);
-            std::shared_ptr<Story> getBChoicePtr() const;
-            void setBChoicePtr(std::shared_ptr<Story> BChoicePtr);
+            Story *getAChoicePtr() const;
+            void setAChoicePtr(Story *AChoicePtr);
+            Story *getBChoicePtr() const;
+            void setBChoicePtr(Story *BChoicePtr);
             std::shared_ptr<Character> getHero() const;
             std::shared_ptr<Character> getBadGuy() const;
             storyType getStoryType() const;
@@ -40,8 +40,8 @@ namespace ee {
             std::string _description;
             std::string _AChoice;
             std::string _BChoice;
-            std::shared_ptr<Story> _AChoicePtr;
-            std::shared_ptr<Story> _BChoicePtr;
+            Story *_AChoicePtr;
+            Story *_BChoicePtr;
             std::shared_ptr<Character> _hero;
             std::shared_ptr<Character> _badGuy;
             storyType _storyType;

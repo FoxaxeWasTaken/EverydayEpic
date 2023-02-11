@@ -28,22 +28,22 @@ std::string ee::Story::getBChoice() const
     return _BChoice;
 }
 
-std::shared_ptr<ee::Story> ee::Story::getAChoicePtr() const
+ee::Story *ee::Story::getAChoicePtr() const
 {
     return _AChoicePtr;
 }
 
-void ee::Story::setAChoicePtr(std::shared_ptr<Story> AChoicePtr)
+void ee::Story::setAChoicePtr(Story *AChoicePtr)
 {
     _AChoicePtr = AChoicePtr;
 }
 
-std::shared_ptr<ee::Story> ee::Story::getBChoicePtr() const
+ee::Story *ee::Story::getBChoicePtr() const
 {
     return _BChoicePtr;
 }
 
-void ee::Story::setBChoicePtr(std::shared_ptr<Story> BChoicePtr)
+void ee::Story::setBChoicePtr(Story *BChoicePtr)
 {
     _BChoicePtr = BChoicePtr;
 }
