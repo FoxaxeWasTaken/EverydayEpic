@@ -203,8 +203,8 @@ ee::Story *createStory(std::shared_ptr<ee::Character> heroPtr, std::shared_ptr<e
     story100->setAChoicePtr(story78);
     story100->setBChoicePtr(story79);
 
-    story_farm->setAChoicePtr(story24);
-    story_farm->setBChoicePtr(story25);
+    story_farm->setAChoicePtr(story41);
+    story_farm->setBChoicePtr(story24);
 
     story24->setAChoicePtr(story25);
     story24->setBChoicePtr(story30);
