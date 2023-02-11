@@ -65,8 +65,6 @@ std::string ee::Character::getStyleString() const
     switch (_style) {
         case CASUAL:
             return "casual";
-        case FORMAL:
-            return "formal";
         case SPORTY:
             return "sporty";
         case FASHIONABLE:
