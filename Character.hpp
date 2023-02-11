@@ -31,7 +31,6 @@ namespace ee {
 
     enum style {
         CASUAL = 0,
-        FORMAL,
         SPORTY,
         FASHIONABLE
     };
