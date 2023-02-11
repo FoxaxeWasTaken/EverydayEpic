@@ -7,8 +7,8 @@
 
 #include "Story.hpp"
 
-ee::Story::Story(std::string situation, std::string AChoice, std::string BChoice, std::shared_ptr<Character> hero, std::shared_ptr<Character> badGuy, storyType storyType)
-    : _situation(situation), _AChoice(AChoice), _BChoice(BChoice), _hero(hero), _badGuy(badGuy), _storyType(storyType)
+ee::Story::Story(std::string situation, std::string description, std::string AChoice, std::string BChoice, std::shared_ptr<Character> hero, std::shared_ptr<Character> badGuy, storyType storyType)
+    : _situation(situation), _description(description), _AChoice(AChoice), _BChoice(BChoice), _hero(hero), _badGuy(badGuy), _storyType(storyType)
 {
 
 }
@@ -61,4 +61,9 @@ std::shared_ptr<ee::Character> ee::Story::getBadGuy() const
 ee::storyType ee::Story::getStoryType() const
 {
     return _storyType;
+}
+
+std::string ee::Story::getDescription() const
+{
+    return _description;
 }
