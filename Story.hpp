@@ -20,7 +20,7 @@ namespace ee {
 
     class Story {
         public:
-            Story(std::string situtation, std::string AChoice, std::string BChoice, std::shared_ptr<Character> hero, std::shared_ptr<Character> badGuy, storyType storyType = INGAME);
+            Story(std::string situtation, std::string description, std::string AChoice, std::string BChoice, std::shared_ptr<Character> hero, std::shared_ptr<Character> badGuy, storyType storyType = INGAME);
             ~Story() = default;
 
             std::string getSituation() const;
@@ -33,9 +33,11 @@ namespace ee {
             std::shared_ptr<Character> getHero() const;
             std::shared_ptr<Character> getBadGuy() const;
             storyType getStoryType() const;
+            std::string getDescription() const;
 
         private:
             std::string _situation;
+            std::string _description;
             std::string _AChoice;
             std::string _BChoice;
             std::shared_ptr<Story> _AChoicePtr;
