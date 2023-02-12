@@ -9,6 +9,7 @@
 
 ee::Button::Button()
 {
+    image = true;
     _firstButton = createButton(sf::Vector2f(200.0f, 100.0f), sf::Color::Red, sf::Vector2f(412.0f, 462.0f));
     _secondButton = createButton(sf::Vector2f(100.0f, 50.0f), sf::Color::Blue, sf::Vector2f(50.0f, 900.0f));
 }
@@ -42,5 +43,14 @@ void ee::Button::setPosition(sf::Vector2f pos, size_t number)
         _firstButton.setPosition(pos);
     } else {
         _secondButton.setPosition(pos);
+    }
+}
+
+void ee::Button::setSize(sf::Vector2f size, size_t number)
+{
+    if (number == 0) {
+        _firstButton.setSize(size);
+    } else {
+        _secondButton.setSize(size);
     }
 }

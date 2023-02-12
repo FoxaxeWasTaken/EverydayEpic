@@ -7,7 +7,7 @@
 
 #include "Story.hpp"
 
-ee::Story *createStory(std::shared_ptr<ee::Character> heroPtr, std::shared_ptr<ee::Character> badGuyPtr)
+ee::Story *ee::createStory(std::shared_ptr<ee::Character> heroPtr, std::shared_ptr<ee::Character> badGuyPtr)
 {
 
     int random_value = rand() % 3;
