@@ -96,3 +96,24 @@ void ee::Event::eventPerso(ee::Perso *perso, ee::Window & window)
         }
     }
 }
+
+ee::Story *ee::Event::eventGame(ee::Button & button, ee::Window & window, ee::Story *story)
+{
+    if (_event.type == sf::Event::MouseButtonReleased &&
+        _event.mouseButton.button == sf::Mouse::Left) {
+        sf::Vector2i mousePos = sf::Mouse::getPosition(window.getWindow());
+        if (button.getButton(0).getGlobalBounds().contains(mousePos.x, mousePos.y)) {
+            story = story->getAChoicePtr();
+            button.image = true;
+        }
+        if (button.getButton(1).getGlobalBounds().contains(mousePos.x, mousePos.y)) {
+            story = story->getBChoicePtr();
+            button.image = true;
+        }
+        if (story->getStoryType() == LOOSE)
+             window.setStatus(GLOOSE);
+        if (story->getStoryType() == WIN)
+            window.setStatus(GWIN);
+    }
+    return (story);
+}

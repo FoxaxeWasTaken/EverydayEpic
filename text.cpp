@@ -10,7 +10,7 @@
 ee::Text::Text()
 {
     sf::Font font;
-    font.loadFromFile("assets/Bird.ttf");
+    font.loadFromFile("police.ttf");
 
     _firstText = createText(font, "PLAY", 35, sf::Color::White, sf::Vector2f(462.0f, 487.0f));
     _secondText = createText(font, "Hello", 24, sf::Color::Red, sf::Vector2f(350.0f, 550.0f));
@@ -49,3 +49,4 @@ void ee::Text::setPosition(sf::Vector2f pos, size_t number)
         _secondText.setPosition(pos);
     }
 }
+

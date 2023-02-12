@@ -7,6 +7,10 @@
 
 #pragma once
 
+#include <SFML/Window.hpp>
+#include <SFML/Graphics.hpp>
+#include <SFML/System.hpp>
+#include <SFML/OpenGL.hpp>
 #include <memory>
 #include "Character.hpp"
 
@@ -34,7 +38,7 @@ namespace ee {
             std::shared_ptr<Character> getBadGuy() const;
             storyType getStoryType() const;
             std::string getDescription() const;
-
+            sf::Sprite spr;
         private:
             std::string _situation;
             std::string _description;
@@ -46,4 +50,6 @@ namespace ee {
             std::shared_ptr<Character> _badGuy;
             storyType _storyType;
     };
+
+    Story *createStory(std::shared_ptr<ee::Character> heroPtr, std::shared_ptr<ee::Character> badGuyPtr);
 }

@@ -11,7 +11,7 @@
     #include <SFML/Graphics.hpp>
     #include <SFML/System.hpp>
     #include <SFML/OpenGL.hpp>
-    #include "Character.hpp"
+    #include "Story.hpp"
     #include <iostream>
 
 namespace ee {
@@ -19,6 +19,8 @@ namespace ee {
         MENU,
         PERSO,
         GAME,
+        GLOOSE,
+        GWIN,
     };
 
     class Button {
@@ -29,6 +31,8 @@ namespace ee {
             sf::RectangleShape createButton(sf::Vector2f size, sf::Color color, sf::Vector2f pos);
             sf::RectangleShape getButton(size_t number);
             void setPosition(sf::Vector2f pos, size_t number);
+            void setSize(sf::Vector2f size, size_t number);
+            bool image;
         private:
             sf::RectangleShape _firstButton;
             sf::RectangleShape _secondButton;
@@ -85,6 +89,9 @@ namespace ee {
             void gameLoop();
             void drawMenu(ee::Button button, ee::Text text);
             void drawPerso(ee::Perso *button);
+            void drawGame(ee::Story *story, ee::Text textStory, sf::Text textSituation, ee::Button &buttonStory);
+            void drawLoose(ee::Story *story, sf::Text textSituation);
+            void drawWin(ee::Story *story, sf::Text textSituation);
         private:
             windowState _state;
             sf::RenderWindow _window;
@@ -100,6 +107,7 @@ namespace ee {
             sf::Event getEvent();
             void eventMenu(ee::Button button, Window & window);
             void eventPerso(ee::Perso *perso, Window & window);
+            ee::Story *eventGame(ee::Button & button, ee::Window & window, ee::Story *story);
         private:
             sf::Event _event;
     };
