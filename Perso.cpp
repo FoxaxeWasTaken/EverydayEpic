@@ -31,7 +31,7 @@ ee::Perso::Perso()
     _choice[12] = createButton(sf::Vector2f(50.0f, 50.0f), sf::Color::Red, sf::Vector2f(100.0f, 886.0f));
     _choice[13] = createButton(sf::Vector2f(50.0f, 50.0f), sf::Color::Red, sf::Vector2f(924.0f, 886.0f));
 
-    _text[0] = createText(font, "Character", 35, sf::Color::White, sf::Vector2f(462.0f, 25.0f));
+    _text[0] = createText(font, "Personnage", 35, sf::Color::White, sf::Vector2f(462.0f, 25.0f));
     _text[1] = createText(font, "Genre", 35, sf::Color::White, sf::Vector2f(206.0f, 150.0f));
     _text[2] = createText(font, "Femme", 35, sf::Color::White, sf::Vector2f(150.0f, 242.0f));
     _text[3] = createText(font, "Homme", 35, sf::Color::White, sf::Vector2f(150.0f, 334.0f));
