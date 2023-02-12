@@ -53,6 +53,8 @@ void ee::Window::gameLoop()
     ee::Event event;
     ee::Perso perso;
     ee::Story *story;
+    sf::Sprite bat;
+    bat.setTexture(*(RequestTexture("A Bat flying in a cave. Photo style", "1024x1024")));
     while(_window.isOpen()) {
         sf::Event e;
         while (_window.pollEvent(e)) {
@@ -70,8 +72,10 @@ void ee::Window::gameLoop()
                     story = event.eventGame(buttonStory, *this, story);
                     break;
                 case GLOOSE:
+                    event.eventGloose(buttonStory, *this);
                     break;
                 case GWIN:
+                    event.eventGwin(buttonStory, *this);
                     break;
             }
         }
@@ -85,7 +89,7 @@ void ee::Window::gameLoop()
         _window.clear();
         switch (_state) {
             case MENU:
-                drawMenu(button, text);
+                drawMenu(button, text, bat);
                 break;
             case PERSO:
                 drawPerso(&perso);
@@ -104,8 +108,9 @@ void ee::Window::gameLoop()
     }
 }
 
-void ee::Window::drawMenu(ee::Button button, ee::Text text)
+void ee::Window::drawMenu(ee::Button button, ee::Text text, sf::Sprite bat)
 {
+    _window.draw(bat);
     _window.draw(button.getButton(0));
     _window.draw(button.getButton(1));
     sf::Font font;
@@ -195,7 +200,7 @@ void ee::Window::drawGame(ee::Story *story, ee::Text textStory, sf::Text textSit
     font.loadFromFile("police.ttf");
     textSituation.setString(story->getSituation());
     if (buttonStory.image == true) {
-        story->spr.setTexture(*(RequestTexture(story->getDescription())));
+        story->spr.setTexture(*(RequestTexture(story->getDescription(), "512x512")));
         buttonStory.image = false;
     }
     textSituation.setCharacterSize(22);
@@ -242,12 +247,12 @@ void ee::Window::drawLoose(ee::Story *story, sf::Text textSituation, ee::Button 
     sf::Font font;
     font.loadFromFile("police.ttf");
     textSituation.setString(story->getSituation());
-    textSituation.setCharacterSize(35);
+    textSituation.setCharacterSize(22);
     textSituation.setFillColor(sf::Color::Red);
     textSituation.setPosition(sf::Vector2f(100, 100));
     textSituation.setFont(font);
     if (buttonStory.image == true) {
-        story->spr.setTexture(*(RequestTexture(story->getDescription())));
+        story->spr.setTexture(*(RequestTexture(story->getDescription(), "512x512")));
         buttonStory.image = false;
     }
     story->spr.setPosition(sf::Vector2f(256, 256));
@@ -260,7 +265,20 @@ void ee::Window::drawLoose(ee::Story *story, sf::Text textSituation, ee::Button 
     rect = textSituation.getLocalBounds();
     textSituation.setOrigin(rect.left + rect.width /  2.0f, rect.top + rect.height / 2.0f);
 
+    buttonStory.setPosition(sf::Vector2f(50.0f, 900.0f), 0);
+    buttonStory.setSize(sf::Vector2f(100.0f, 50.0f), 0);
+
+    _window.draw(buttonStory.getButton(0));
     _window.draw(story->spr);
+    _window.draw(textSituation);
+
+    textSituation.setString("Exit");
+    textSituation.setCharacterSize(35);
+    textSituation.setFillColor(sf::Color::White);
+    textSituation.setFont(font);
+    textSituation.setPosition(buttonStory.getButton(0).getPosition() + buttonStory.getButton(0).getSize() / 2.0f);
+    rect = textSituation.getLocalBounds();
+    textSituation.setOrigin(rect.left + rect.width /  2.0f, rect.top + rect.height / 2.0f);
     _window.draw(textSituation);
 }
 
@@ -269,15 +287,36 @@ void ee::Window::drawWin(ee::Story *story, sf::Text textSituation, ee::Button & 
     sf::Font font;
     font.loadFromFile("police.ttf");
     textSituation.setString(story->getSituation());
-    textSituation.setCharacterSize(35);
+    textSituation.setCharacterSize(22);
     textSituation.setFillColor(sf::Color::Green);
-    textSituation.setPosition(sf::Vector2f(100, 100));
     textSituation.setFont(font);
     if (buttonStory.image == true) {
-        story->spr.setTexture(*(RequestTexture(story->getDescription())));
+        story->spr.setTexture(*(RequestTexture(story->getDescription(), "512x512")));
         buttonStory.image = false;
     }
     story->spr.setPosition(sf::Vector2f(256, 256));
+
+    sf::FloatRect rect;
+    story->RectSituation.setSize(sf::Vector2f(1024, 100));
+    story->RectSituation.setPosition(0,50);
+    story->RectSituation.setFillColor(sf::Color::Transparent);;
+    textSituation.setPosition(story->RectSituation.getPosition() + story->RectSituation.getSize() / 2.0f);
+    rect = textSituation.getLocalBounds();
+    textSituation.setOrigin(rect.left + rect.width /  2.0f, rect.top + rect.height / 2.0f);
+
+    buttonStory.setPosition(sf::Vector2f(50.0f, 900.0f), 0);
+    buttonStory.setSize(sf::Vector2f(100.0f, 50.0f), 0);
+
+    _window.draw(buttonStory.getButton(0));
     _window.draw(story->spr);
+    _window.draw(textSituation);
+
+    textSituation.setString("Exit");
+    textSituation.setCharacterSize(35);
+    textSituation.setFillColor(sf::Color::White);
+    textSituation.setFont(font);
+    textSituation.setPosition(buttonStory.getButton(0).getPosition() + buttonStory.getButton(0).getSize() / 2.0f);
+    rect = textSituation.getLocalBounds();
+    textSituation.setOrigin(rect.left + rect.width /  2.0f, rect.top + rect.height / 2.0f);
     _window.draw(textSituation);
 }

@@ -87,7 +87,7 @@ namespace ee {
             windowState getStatus();
             void setStatus(windowState state);
             void gameLoop();
-            void drawMenu(ee::Button button, ee::Text text);
+            void drawMenu(ee::Button button, ee::Text text, sf::Sprite bat);
             void drawPerso(ee::Perso *button);
             void drawGame(ee::Story *story, ee::Text textStory, sf::Text textSituation, ee::Button &buttonStory);
             void drawLoose(ee::Story *story, sf::Text textSituation, ee::Button & buttonStory);
@@ -108,6 +108,8 @@ namespace ee {
             void eventMenu(ee::Button button, Window & window);
             void eventPerso(ee::Perso *perso, Window & window);
             ee::Story *eventGame(ee::Button & button, ee::Window & window, ee::Story *story);
+            void eventGloose(ee::Button button, Window & window);
+            void eventGwin(ee::Button button, Window & window);
         private:
             sf::Event _event;
     };

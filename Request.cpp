@@ -11,13 +11,13 @@ size_t write_data(void *ptr, size_t size, size_t nmemb, std::vector<char> *data)
     return n;
 }
 
-sf::Texture *RequestTexture(std::string request)
+sf::Texture *RequestTexture(std::string request, std::string size)
 {
     CURL *curl;
     CURLcode res;
     std::string API_KEY = std::getenv("OPENAI_API_KEY");
     char buffer[250] = "Authorization: Bearer ";
-    std::string fullRequest("{\"prompt\":\"" + request + "\",\"n\":1,\"size\":\"512x512\"}");
+    std::string fullRequest("{\"prompt\":\"" + request + "\",\"n\":1,\"size\":\""+ size +"\"}");
     sf::Texture *texture = new sf::Texture();
 
     curl = curl_easy_init();

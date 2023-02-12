@@ -120,3 +120,27 @@ ee::Story *ee::Event::eventGame(ee::Button & button, ee::Window & window, ee::St
     }
     return (story);
 }
+
+void ee::Event::eventGloose(ee::Button button, Window & window)
+{
+    sf::Vector2i mousePos = sf::Mouse::getPosition(window.getWindow());
+
+    if (_event.type == sf::Event::MouseButtonReleased &&
+        _event.mouseButton.button == sf::Mouse::Left) {
+        if (button.getButton(0).getGlobalBounds().contains(mousePos.x, mousePos.y)) {
+            window.getWindow().close();
+        }
+    }
+}
+
+void ee::Event::eventGwin(ee::Button button, Window & window)
+{
+    sf::Vector2i mousePos = sf::Mouse::getPosition(window.getWindow());
+
+    if (_event.type == sf::Event::MouseButtonReleased &&
+        _event.mouseButton.button == sf::Mouse::Left) {
+        if (button.getButton(0).getGlobalBounds().contains(mousePos.x, mousePos.y)) {
+            window.getWindow().close();
+        }
+    }
+}

@@ -17,5 +17,5 @@
 #include <nlohmann/json.hpp>
 #include <memory>
 
-sf::Texture *RequestTexture(std::string request);
+sf::Texture *RequestTexture(std::string request, std::string size);
 size_t write_data(void *ptr, size_t size, size_t nmemb, std::vector<char> *data);
