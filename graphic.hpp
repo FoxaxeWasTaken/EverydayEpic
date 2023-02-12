@@ -90,8 +90,8 @@ namespace ee {
             void drawMenu(ee::Button button, ee::Text text);
             void drawPerso(ee::Perso *button);
             void drawGame(ee::Story *story, ee::Text textStory, sf::Text textSituation, ee::Button &buttonStory);
-            void drawLoose(ee::Story *story, sf::Text textSituation);
-            void drawWin(ee::Story *story, sf::Text textSituation);
+            void drawLoose(ee::Story *story, sf::Text textSituation, ee::Button & buttonStory);
+            void drawWin(ee::Story *story, sf::Text textSituation, ee::Button & buttonStory);
         private:
             windowState _state;
             sf::RenderWindow _window;

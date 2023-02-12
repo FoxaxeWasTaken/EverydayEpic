@@ -39,6 +39,10 @@ namespace ee {
             storyType getStoryType() const;
             std::string getDescription() const;
             sf::Sprite spr;
+            sf::FloatRect textRect1;
+            sf::FloatRect textRect2;
+            sf::FloatRect textRect3;
+            sf::RectangleShape RectSituation;
         private:
             std::string _situation;
             std::string _description;

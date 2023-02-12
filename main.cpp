@@ -11,6 +11,7 @@
 
 int main()
 {
+    srand(time(NULL));
     ee::Window game;
     game.gameLoop();
     return 0;
@@ -44,7 +45,6 @@ void ee::Window::setStatus(windowState state)
 
 void ee::Window::gameLoop()
 {
-    srand(time(NULL));
     ee::Button button;
     ee::Text text;
     ee::Text textStory;
@@ -94,10 +94,10 @@ void ee::Window::gameLoop()
                 drawGame(story, textStory, textSituation, buttonStory);
                 break;
             case GLOOSE:
-                drawLoose(story, textSituation);
+                drawLoose(story, textSituation, buttonStory);
                 break;
             case GWIN:
-                drawWin(story, textSituation);
+                drawWin(story, textSituation, buttonStory);
                 break;
         }
         _window.display();
@@ -109,9 +109,22 @@ void ee::Window::drawMenu(ee::Button button, ee::Text text)
     _window.draw(button.getButton(0));
     _window.draw(button.getButton(1));
     sf::Font font;
+    sf::FloatRect rect;
     font.loadFromFile("police.ttf");
     text.getText(0).setFont(font);
+    text.getText(1).setFont(font);
+
+    text.getText(0).setCharacterSize(45);
+    text.getText(0).setPosition(button.getButton(0).getPosition() + button.getButton(0).getSize() / 2.0f);
+    rect = text.getText(0).getLocalBounds();
+    text.getText(0).setOrigin(rect.left + rect.width /  2.0f, rect.top + rect.height / 2.0f);
     _window.draw(text.getText(0));
+
+    text.getText(1).setCharacterSize(45);
+    text.getText(1).setPosition(button.getButton(1).getPosition() + button.getButton(1).getSize() / 2.0f);
+    rect = text.getText(1).getLocalBounds();
+    text.getText(1).setOrigin(rect.left + rect.width /  2.0f, rect.top + rect.height / 2.0f);
+    _window.draw(text.getText(1));
 }
 
 void ee::Window::drawPerso(ee::Perso *button)
@@ -153,6 +166,23 @@ void ee::Window::drawPerso(ee::Perso *button)
     }
     sf::Font font;
     font.loadFromFile("police.ttf");
+
+    sf::FloatRect rect;
+    button->getPersonText(18).setFont(font);
+    button->getPersonText(18).setPosition(button->getPersoButton(13).getPosition() + button->getPersoButton(13).getSize() / 2.0f);
+    rect = button->getPersonText(18).getLocalBounds();
+    button->getPersonText(18).setOrigin(rect.left + rect.width /  2.0f, rect.top + rect.height / 2.0f);
+
+    button->getPersonText(17).setFont(font);
+    button->getPersonText(17).setPosition(button->getPersoButton(12).getPosition() + button->getPersoButton(12).getSize() / 2.0f);
+    rect = button->getPersonText(17).getLocalBounds();
+    button->getPersonText(17).setOrigin(rect.left + rect.width /  2.0f, rect.top + rect.height / 2.0f);
+
+    button->getPersonText(0).setFillColor(sf::Color::Red);
+    button->getPersonText(1).setFillColor(sf::Color::Green);
+    button->getPersonText(4).setFillColor(sf::Color::Green);
+    button->getPersonText(8).setFillColor(sf::Color::Green);
+    button->getPersonText(13).setFillColor(sf::Color::Green);
     for (int i = 0; i < 19; i++) {
         button->getPersonText(i).setFont(font);
         _window.draw(button->getPersonText(i));
@@ -168,20 +198,36 @@ void ee::Window::drawGame(ee::Story *story, ee::Text textStory, sf::Text textSit
         story->spr.setTexture(*(RequestTexture(story->getDescription())));
         buttonStory.image = false;
     }
-    textSituation.setCharacterSize(35);
-    textSituation.setFillColor(sf::Color::Red);
-    textSituation.setPosition(sf::Vector2f(100, 100));
+    textSituation.setCharacterSize(22);
+    textSituation.setFillColor(sf::Color::White);
+    textSituation.setPosition(sf::Vector2f(0, 0));
     textSituation.setFont(font);
-    buttonStory.setSize(sf::Vector2f(480, 200), 0);
-    buttonStory.setSize(sf::Vector2f(480, 200), 1);
-    buttonStory.setPosition(sf::Vector2f(16, 800), 0);
-    buttonStory.setPosition(sf::Vector2f(528, 800), 1);
+    buttonStory.setSize(sf::Vector2f(480, 75), 0);
+    buttonStory.setSize(sf::Vector2f(480, 75), 1);
+    buttonStory.setPosition(sf::Vector2f(16, 900), 0);
+    buttonStory.setPosition(sf::Vector2f(528, 900), 1);
+
+    story->RectSituation.setSize(sf::Vector2f(1024, 100));
+    story->RectSituation.setPosition(0,50);
+    story->RectSituation.setFillColor(sf::Color::Transparent);;
+
     textStory.getText(0).setString(story->getAChoice());
     textStory.getText(0).setFont(font);
-    textStory.getText(0).setPosition(108 ,  900 - textStory.getText(0).getCharacterSize() / 2);
+    textStory.getText(0).setPosition(buttonStory.getButton(0).getPosition() + buttonStory.getButton(0).getSize() / 2.0f);
+    story->textRect1 = textStory.getText(0).getLocalBounds();
+    textStory.getText(0).setOrigin(story->textRect1.left + story->textRect1.width /  2.0f, story->textRect1.top + story->textRect1.height / 2.0f);
+
     textStory.getText(1).setString(story->getBChoice());
     textStory.getText(1).setFont(font);
-    textStory.getText(1).setPosition(768 ,  900 - textStory.getText(1).getCharacterSize() / 2);
+    textStory.getText(1).setPosition(buttonStory.getButton(1).getPosition() + buttonStory.getButton(1).getSize() / 2.0f);
+    story->textRect2 = textStory.getText(1).getLocalBounds();
+    textStory.getText(1).setOrigin(story->textRect2.left + story->textRect2.width /  2.0f, story->textRect2.top + story->textRect2.height / 2.0f);
+
+    textSituation.setPosition(story->RectSituation.getPosition() + story->RectSituation.getSize() / 2.0f);
+    story->textRect3 = textSituation.getLocalBounds();
+    textSituation.setOrigin(story->textRect3.left + story->textRect3.width /  2.0f, story->textRect3.top + story->textRect3.height / 2.0f);
+
+    story->spr.setPosition(sf::Vector2f(256, 256));
 
     _window.draw(story->spr);
     _window.draw(buttonStory.getButton(0));
@@ -191,7 +237,7 @@ void ee::Window::drawGame(ee::Story *story, ee::Text textStory, sf::Text textSit
     _window.draw(textSituation);
 }
 
-void ee::Window::drawLoose(ee::Story *story, sf::Text textSituation)
+void ee::Window::drawLoose(ee::Story *story, sf::Text textSituation, ee::Button & buttonStory)
 {
     sf::Font font;
     font.loadFromFile("police.ttf");
@@ -200,10 +246,25 @@ void ee::Window::drawLoose(ee::Story *story, sf::Text textSituation)
     textSituation.setFillColor(sf::Color::Red);
     textSituation.setPosition(sf::Vector2f(100, 100));
     textSituation.setFont(font);
+    if (buttonStory.image == true) {
+        story->spr.setTexture(*(RequestTexture(story->getDescription())));
+        buttonStory.image = false;
+    }
+    story->spr.setPosition(sf::Vector2f(256, 256));
+
+    sf::FloatRect rect;
+    story->RectSituation.setSize(sf::Vector2f(1024, 100));
+    story->RectSituation.setPosition(0,50);
+    story->RectSituation.setFillColor(sf::Color::Transparent);;
+    textSituation.setPosition(story->RectSituation.getPosition() + story->RectSituation.getSize() / 2.0f);
+    rect = textSituation.getLocalBounds();
+    textSituation.setOrigin(rect.left + rect.width /  2.0f, rect.top + rect.height / 2.0f);
+
+    _window.draw(story->spr);
     _window.draw(textSituation);
 }
 
-void ee::Window::drawWin(ee::Story *story, sf::Text textSituation)
+void ee::Window::drawWin(ee::Story *story, sf::Text textSituation, ee::Button & buttonStory)
 {
     sf::Font font;
     font.loadFromFile("police.ttf");
@@ -212,5 +273,11 @@ void ee::Window::drawWin(ee::Story *story, sf::Text textSituation)
     textSituation.setFillColor(sf::Color::Green);
     textSituation.setPosition(sf::Vector2f(100, 100));
     textSituation.setFont(font);
+    if (buttonStory.image == true) {
+        story->spr.setTexture(*(RequestTexture(story->getDescription())));
+        buttonStory.image = false;
+    }
+    story->spr.setPosition(sf::Vector2f(256, 256));
+    _window.draw(story->spr);
     _window.draw(textSituation);
 }

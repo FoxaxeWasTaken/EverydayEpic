@@ -17,7 +17,7 @@ sf::Texture *RequestTexture(std::string request)
     CURLcode res;
     std::string API_KEY = std::getenv("OPENAI_API_KEY");
     char buffer[250] = "Authorization: Bearer ";
-    std::string fullRequest("{\"prompt\":\"" + request + "\",\"n\":1,\"size\":\"1024x1024\"}");
+    std::string fullRequest("{\"prompt\":\"" + request + "\",\"n\":1,\"size\":\"512x512\"}");
     sf::Texture *texture = new sf::Texture();
 
     curl = curl_easy_init();

@@ -12,8 +12,8 @@ ee::Text::Text()
     sf::Font font;
     font.loadFromFile("police.ttf");
 
-    _firstText = createText(font, "PLAY", 35, sf::Color::White, sf::Vector2f(462.0f, 487.0f));
-    _secondText = createText(font, "Hello", 24, sf::Color::Red, sf::Vector2f(350.0f, 550.0f));
+    _firstText = createText(font, "PLAY", 22, sf::Color::White, sf::Vector2f(462.0f, 487.0f));
+    _secondText = createText(font, "Exit", 22, sf::Color::White, sf::Vector2f(350.0f, 550.0f));
 }
 
 ee::Text::~Text()

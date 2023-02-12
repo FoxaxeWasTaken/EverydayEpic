@@ -10,8 +10,8 @@
 ee::Button::Button()
 {
     image = true;
-    _firstButton = createButton(sf::Vector2f(200.0f, 100.0f), sf::Color::Red, sf::Vector2f(412.0f, 462.0f));
-    _secondButton = createButton(sf::Vector2f(100.0f, 50.0f), sf::Color::Blue, sf::Vector2f(50.0f, 900.0f));
+    _firstButton = createButton(sf::Vector2f(200.0f, 100.0f), sf::Color(128,128,128), sf::Vector2f(412.0f, 462.0f));
+    _secondButton = createButton(sf::Vector2f(100.0f, 50.0f), sf::Color(128,128,128), sf::Vector2f(50.0f, 900.0f));
 }
 
 ee::Button::~Button()

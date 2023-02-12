@@ -36,6 +36,9 @@ void ee::Event::eventMenu(ee::Button button, ee::Window & window)
         if (button.getButton(0).getGlobalBounds().contains(mousePos.x, mousePos.y)) {
             window.setStatus(PERSO);
         }
+        if (button.getButton(1).getGlobalBounds().contains(mousePos.x, mousePos.y)) {
+            window.getWindow().close();
+        }
     }
 }
 
