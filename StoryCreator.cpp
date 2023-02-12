@@ -24,7 +24,7 @@ ee::Story *ee::createStory(std::shared_ptr<ee::Character> heroPtr, std::shared_p
     ee::Story *story8 = new ee::Story(std::string("Vous venez d'acheter de l'alcool, voulez vous\naller au parc, ou marcher dans la ville ?"), heroPtr->getDescription() + std::string(" walking in the street with a bottle of alcohol"), std::string("Aller au parc"), std::string("Marcher dans la ville"), heroPtr, badGuyPtr, ee::storyType::INGAME);
     ee::Story *story9 = new ee::Story(std::string("Vous avez decide de courir ! En avez-vous\nmarre ou voulez-vous continuer a courir ?"), heroPtr->getDescription() + std::string(" running in the streets"), std::string("Partir marcher dans la ville"), std::string("Continuer a courir"), heroPtr, badGuyPtr, ee::storyType::INGAME);
     ee::Story *story10 = new ee::Story(std::string("Vous avez decide de fuir ! Voulez-vous aller\nmarcher dans la ville, ou continuer a courir ?"), heroPtr->getDescription() + std::string(" running in the street"), std::string("Partir marcher dans la ville"), std::string("Continuer a courir"), heroPtr, badGuyPtr, ee::storyType::INGAME);
-    ee::Story *story12 = new ee::Story(std::string("Vous voulez vraiment aller a votre\nrendez-vous, etes vous sûrs ?"), heroPtr->getDescription() + std::string(" in front of an hospital"), std::string("Oui, je veux y aller !"), std::string("En fait non, je prefere partir"), heroPtr, badGuyPtr, ee::storyType::INGAME);
+    ee::Story *story12 = new ee::Story(std::string("Vous voulez vraiment aller a votre\nrendez-vous, etes vous sur ?"), heroPtr->getDescription() + std::string(" in front of an hospital"), std::string("Oui, je veux y aller !"), std::string("En fait non, je prefere partir"), heroPtr, badGuyPtr, ee::storyType::INGAME);
     ee::Story *story13 = new ee::Story(std::string("Vous etes arrives a votre RDV, voulez-vous\nvous installer dans la salle d'attente, ou fuir ?"), heroPtr->getDescription() + std::string(" in the waiting room of an hospital"), std::string("S'installer dans la salle d'attente"), std::string("Fuir"), heroPtr, badGuyPtr, ee::storyType::INGAME);
     ee::Story *story14 = new ee::Story(std::string("Vous avez decide de vous rendre a votre\nrendez-vous, et le medecin arrive pour\nvous demander d'entrer, voulez-vous rentrer ?"), heroPtr->getDescription() + std::string(" in the waiting room of an hospital"), std::string("Rentrer"), std::string("Faire un caprice et d'enfuir"), heroPtr, badGuyPtr, ee::storyType::INGAME);
     ee::Story *story15 = new ee::Story(std::string("Le medecin vous annonce que vous avez ete\ndiagnostique d'une maladie incurable,\nvous etes sur le point de mourir, vous n'allez\nmalheureusement pas pouvoir devenir un super-heros."), heroPtr->getDescription() + std::string(" who have cancer in a doctor's office"), std::string(""), std::string(""), heroPtr, badGuyPtr, ee::storyType::LOOSE);
@@ -34,19 +34,19 @@ ee::Story *ee::createStory(std::shared_ptr<ee::Character> heroPtr, std::shared_p
     ee::Story *story19 = new ee::Story(std::string("Vous avez decide de vous asseoir sur un\nbanc, souhaitez vous dormir, ou nourrir\nles pigeons avant de partir en voiture ?"), heroPtr->getDescription() + std::string(" on a bench, with pigeons in front of him"), std::string("Dormir"), std::string("Nourrir les pigeons"), heroPtr, badGuyPtr, ee::storyType::INGAME);
     ee::Story *story20 = new ee::Story(std::string("Vous avez decide de faire un running !\nVoulez-vous aller marcher dans la ville,\nou continuer a courir ?"), heroPtr->getDescription() + std::string(" running in the street"), std::string("Partir marcher dans la ville"), std::string("Continuer a courir"), heroPtr, badGuyPtr, ee::storyType::INGAME);
     ee::Story *story21 = new ee::Story(std::string("Un super-heros ne dort jamais ! Vous mourrez"), heroPtr->getDescription() + std::string(" sleeping sadly on a bench in a park"), std::string(""), std::string(""), heroPtr, badGuyPtr, ee::storyType::LOOSE);
-    ee::Story *story23 = new ee::Story(std::string("Apres avoir nourri les pigeons, vous prenez\nla voiture, mais vous arrivez a une\nintersection, voulez-vous tourner\na gauche ou a droite ?"), heroPtr->getDescription() + std::string(" in a car, in front of an intersection"), std::string("Tourner a gauche"), std::string("Tourner a droite"), heroPtr, badGuyPtr, ee::storyType::INGAME);
+    ee::Story *story23 = new ee::Story(std::string("Vous prenez la voiture, mais vous arrivez a une\nintersection, voulez-vous tourner\na gauche ou a droite ?"), heroPtr->getDescription() + std::string(" in a car, in front of an intersection"), std::string("Tourner a gauche"), std::string("Tourner a droite"), heroPtr, badGuyPtr, ee::storyType::INGAME);
 
         /* Second part*/
     ee::Story *story90 = new ee::Story(std::string("Vous voilà arrive a une intersection.\nQue faire?"), heroPtr->getDescription() + std::string(" in a car, in front of an intersection"), std::string("Aller a gauche"), std::string("Aller a droite"), heroPtr, badGuyPtr, ee::storyType::INGAME);
     ee::Story *story91 = new ee::Story(std::string("En tournant a gauche, vous vous faites\npercuter par une chevre. n'ayant plus le\nchoix vous sortez de votre voiture et vous\ntenter d'arreter la chevre. À ce moment,\nun monsieur grognon s'enerve contre vous.\nQue faites vous ?"), heroPtr->getDescription() + std::string(" in his car. the car is hitted by a goat, and an angry man is coming in another car"), std::string("Discutez pacifiquement"), std::string("Le frapper"), heroPtr, badGuyPtr, ee::storyType::INGAME);
     ee::Story *story92 = new ee::Story(std::string("En tournant a droite. Vous etes bloque\ndans les embouteillages. Cela fait maintenant\n20 minutes que vous etes coince. Vous sortez\nde votre vehicule et allez voir la personne\na l'origine de ce grabuge. Arrive devant lui,\nque faites vous ?"), heroPtr->getDescription() + std::string(" in the traffic, with an angry man in another car"), std::string("Discutez pacifiquement"), std::string("Le frapper"), heroPtr, badGuyPtr, ee::storyType::INGAME);
-    ee::Story *story94 = new ee::Story(std::string("En vous battant avec lui, vous arrivez\na parer quelque coups mais il est bien trop\nfort pour vous. Vous retournez dans votre\nvehicule en boîtant et en etant frustre.\nPour vous changer les idees, vous decidez\nde prendre l'autoroute. Au bout de quelques\nkilometres, vous apercevez une personne\nblessee au bord de la route. Qu'allez vous faire ?"), heroPtr->getDescription() + std::string(" who is hurt in a car on the highway, with a hitchhiker on the side of the road"), std::string("Vous vous arretez et lui venez en aide"), std::string("Vous l'ignorez, c'est sans doute un autostoppeur"), heroPtr, badGuyPtr, ee::storyType::INGAME);
+    ee::Story *story94 = new ee::Story(std::string("En vous battant avec lui, vous arrivez\na parer quelque coups mais il est bien trop\nfort pour vous. Vous retournez dans votre\nvehicule en boitant et en etant frustre.\nPour vous changer les idees, vous decidez\nde prendre l'autoroute. Au bout de quelques\nkilometres, vous apercevez une personne\nblessee au bord de la route. Qu'allez vous faire ?"), heroPtr->getDescription() + std::string(" who is hurt in a car on the highway, with a hitchhiker on the side of the road"), std::string("Vous vous arretez et lui venez en aide"), std::string("Vous l'ignorez, c'est sans doute un autostoppeur"), heroPtr, badGuyPtr, ee::storyType::INGAME);
     ee::Story *story95 = new ee::Story(std::string("Vous tentez de discuter avec mais il n'est\npas cooperatif. Il vous mets un coup et\nvous tomber dans les vapes."), heroPtr->getDescription() + std::string(" getting hurt by someone on the side of the road"), std::string(""), std::string(""), heroPtr, badGuyPtr, ee::storyType::LOOSE);
     ee::Story *story96 = new ee::Story(std::string("Vous vous arretez pour l'aider. Vous venez\nde le sauver. Vous etes son super-heros !"), heroPtr->getDescription() + std::string(" taking a hitchhiker in his car"), std::string(""), std::string(""), heroPtr, badGuyPtr, ee::storyType::WIN);
     ee::Story *story97 = new ee::Story(std::string("Vous continuez de rouler ?"), heroPtr->getDescription() + std::string(" driving in the highway"), std::string("Accelerer"), std::string("Ralentir"), heroPtr, badGuyPtr, ee::storyType::INGAME);
     ee::Story *story98 = new ee::Story(std::string("Vous ralentissez tellement que vous vous\netes fait percuter par le camion derriere\nvous. Apprenez a conduire."), heroPtr->getDescription() + std::string(" in a car, getting hit by the truck behind him"), std::string(""), std::string(""), heroPtr, badGuyPtr, ee::storyType::LOOSE);
     ee::Story *story99 = new ee::Story(std::string("Vous accelerez tellement que vous avez ete\nflashe a 100 km/h au dessus du seuil autorise.\nVous vous faites arreter par les gendarmes."), heroPtr->getDescription() + std::string(" getting stopped by the police"), std::string(""), std::string(""), heroPtr, badGuyPtr, ee::storyType::LOOSE);
-    ee::Story *story83 = new ee::Story(std::string("Vous marchez dans la ville depuis quelques\nminutes dejà. Deux voies s'ouvrent a vous,\nvers laquelle dirigez vous ?"), heroPtr->getDescription() + std::string(" walking in the street, with two directions in fornt of him"), std::string("Allez sur la place centrale"), std::string("Allez dans une petite ruelle sombre"), heroPtr, badGuyPtr, ee::storyType::INGAME);
+    ee::Story *story83 = new ee::Story(std::string("Vous marchez dans la ville depuis quelques\nminutes deja. Deux voies s'ouvrent a vous,\nvers laquelle dirigez vous ?"), heroPtr->getDescription() + std::string(" walking in the street, with two directions in fornt of him"), std::string("Allez sur la place centrale"), std::string("Allez dans une petite ruelle sombre"), heroPtr, badGuyPtr, ee::storyType::INGAME);
     ee::Story *story81 = new ee::Story(std::string("Vous marchez dans la direction de la ruelle.\nUne fois dans la ruelle, votre ennemi vous\ntombe dessus et vous fracasse."), heroPtr->getDescription() + std::string(" getting hurt by someone in a little street"), std::string(""), std::string(""), heroPtr, badGuyPtr, ee::storyType::LOOSE);
     ee::Story *story82 = new ee::Story(std::string("Vous arrivez sur la place centrale et vous\nvoyez votre ennemi mettre le feu a une\npoubelle. Que faites vous ?"), heroPtr->getDescription() + std::string(" walking in the city, and seeing someone setting fire to a garbage can"), std::string("eteindre le feu"), std::string("Arreter votre ennemi"), heroPtr, badGuyPtr, ee::storyType::INGAME);
     ee::Story *story88 = new ee::Story(std::string("Vous arretez l'ennemi.\nVous etes le super-heros de la ville !"), heroPtr->getDescription() + std::string(" stopping someone setting fire to a garbage can"), std::string(""), std::string(""), heroPtr, badGuyPtr, ee::storyType::WIN);
@@ -54,7 +54,7 @@ ee::Story *ee::createStory(std::shared_ptr<ee::Character> heroPtr, std::shared_p
     ee::Story *story84 = new ee::Story(std::string("Vous voyez un homme agresser une vielle\ndame. Voulez vous aller voir ?"), heroPtr->getDescription() + std::string(" seeing someone attacking an old lady"), std::string("Aller voir"), std::string("Continuer de courir"), heroPtr, badGuyPtr, ee::storyType::INGAME);
     ee::Story *story85 = new ee::Story(std::string("Vous voyez de la fumee sur la place\ncentrale. Que faites vous ?"), heroPtr->getDescription() + std::string(" seeing smoke in the city"), std::string("Y aller"), std::string("Continuer de courir"), heroPtr, badGuyPtr, ee::storyType::INGAME);
     ee::Story *story86 = new ee::Story(std::string("Vous courez depuis tellement longtemps.\nVoulez-vous faire une pause ?"), heroPtr->getDescription() + std::string(" who is out of breath from running"), std::string("Oui, je prends une pause"), std::string("Non, je continue de courir"), heroPtr, badGuyPtr, ee::storyType::INGAME);
-    ee::Story *story87 = new ee::Story(std::string("Vous courez depuis si longtemps que vous\nvenez de gagnez un marathon.\nVous etes un super-heros !"),heroPtr->getDescription() + std::string("who won a marathon"), std::string(""), std::string(""), heroPtr, badGuyPtr, ee::storyType::WIN);
+    ee::Story *story87 = new ee::Story(std::string("Vous courez depuis si longtemps que vous\nvenez de gagner un marathon.\nVous etes un super-heros !"),heroPtr->getDescription() + std::string("who won a marathon"), std::string(""), std::string(""), heroPtr, badGuyPtr, ee::storyType::WIN);
     ee::Story *story101 = new ee::Story(std::string("Vous etes asthmatique et vous n'arrivez\npas a reprendre votre souffle.\nVous vous asphyxiez."),heroPtr->getDescription() + std::string("who can't catch their breath"), std::string(""), std::string(""), heroPtr, badGuyPtr, ee::storyType::LOOSE);
     ee::Story *story100 = new ee::Story(std::string("Voulez-vous le poursuivre ou\naider la vieille dame ?"), heroPtr->getDescription() + std::string(" seeing someone running, and an old lady who seems hurt"), std::string("Le poursuivre"), std::string("Aider la vieille dame"), heroPtr, badGuyPtr, ee::storyType::INGAME);
 
@@ -66,7 +66,7 @@ ee::Story *ee::createStory(std::shared_ptr<ee::Character> heroPtr, std::shared_p
     ee::Story *story25 = new ee::Story(std::string("Vous avez decide d'aller nourrir vos poules.\nQue souhaitez-vous faire ?"), heroPtr->getDescription() + std::string(" in a farm with chickens"), std::string("Ouvrir la porte du poulailler pour les nourrir"), std::string("Jeter la nourriture par dessus l'enclos"), heroPtr, badGuyPtr, ee::storyType::INGAME);
     ee::Story *story26 = new ee::Story(std::string("Vous avez decide de jeter la nourriture\ndes poules par dessus l'enclos.\nQue souhaitez-vous faire ensuite ?"), heroPtr->getDescription() + std::string(" in a farm in front of a chicken enclosure"), std::string("S'occuper de la recolte de carotte"), std::string("Aller nourrir les vaches"), heroPtr, badGuyPtr, ee::storyType::INGAME);
     ee::Story *story27 = new ee::Story(std::string("Vous choissisez d'ouvrir le poulailler.\nAttention une poule s'enfuit, que faites vous ?"), heroPtr->getDescription() + std::string(" in a farm with a chicken running out of the chicken coop"), std::string("Fermer la porte du poulailler"), std::string("Partez a la poursuite de la poule"), heroPtr, badGuyPtr, ee::storyType::INGAME);
-    ee::Story *story28 = new ee::Story(std::string("Vous choissisez de fermer le poulailler.\nDurant la fermeture du poulailler, la poule\nfugitive est dejà trop loin pour que vous\nla rattrapiez. Que faites vous ?"), heroPtr->getDescription() + std::string(" in a farm with a chicken running"), std::string("S'occuper de la recolte de carotte"), std::string("Aller nourrir les vaches"), heroPtr, badGuyPtr, ee::storyType::INGAME);
+    ee::Story *story28 = new ee::Story(std::string("Vous choissisez de fermer le poulailler.\nDurant la fermeture du poulailler, la poule\nfugitive est deja trop loin pour que vous\nla rattrapiez. Que faites vous ?"), heroPtr->getDescription() + std::string(" in a farm with a chicken running"), std::string("S'occuper de la recolte de carotte"), std::string("Aller nourrir les vaches"), heroPtr, badGuyPtr, ee::storyType::INGAME);
     ee::Story *story29 = new ee::Story(std::string("Vous avez decide de poursuivre la poule.\nPendant votre course poursuite, toutes\nvos poules se sont enfuient et malheureusement\nvous glissez et vous vous\nfracturez la colonne vertebrale."), heroPtr->getDescription() + std::string(" falling with a lot of chickens around him"), std::string(""), std::string(""), heroPtr, badGuyPtr, ee::storyType::LOOSE);
     ee::Story *story30 = new ee::Story(std::string("Vous allez nourrir vos vaches.\nQuelles vaches voulez-vous nourrir en premier ?"), heroPtr->getDescription() + std::string(" in a farm in front of 2 cows"), std::string("Les vaches laitieres"), std::string("Les vaches a viande"), heroPtr, badGuyPtr, ee::storyType::INGAME);
     ee::Story *story31_32 = new ee::Story(std::string("Que souhaitez vous leur donner ?"), heroPtr->getDescription() + std::string(" in a farm in foront of 2 cows"), std::string("Du fourrage vert"), std::string("De la farine de viande"), heroPtr, badGuyPtr, ee::storyType::INGAME);
@@ -80,7 +80,7 @@ ee::Story *ee::createStory(std::shared_ptr<ee::Character> heroPtr, std::shared_p
     /* Recolte de carottes */
 
     ee::Story *story41 = new ee::Story(std::string("Vous avez decide d'aller cueillir des carottes,\nmais vous voyez que la moitie du champ\nest saccagee ! Que voulez-vous faire ?"), heroPtr->getDescription() + std::string(" in a carrot field"), std::string("Aller demander de l'aide au voisin"), std::string("Aller chercher de quoi replanter des carottes en ville"), heroPtr, badGuyPtr, ee::storyType::INGAME);
-    ee::Story *story43 = new ee::Story(std::string("En allant voir le voisin, il vous dit que\nson tracteur a ete sabote par un concurrent,\nc'est sûrement le meme que celui qui a\nsaccage votre champ de carottes. Que faire ?"), heroPtr->getDescription() + std::string(" with another farmer looking to a broken tractor"), std::string("Partir a la maison du concurrent"), std::string("Aider le voisin a reparer son tracteur"), heroPtr, badGuyPtr, ee::storyType::INGAME);
+    ee::Story *story43 = new ee::Story(std::string("En allant voir le voisin, il vous dit que\nson tracteur a ete sabote par un concurrent,\nc'est surement le meme que celui qui a\nsaccage votre champ de carottes. Que faire ?"), heroPtr->getDescription() + std::string(" with another farmer looking to a broken tractor"), std::string("Partir a la maison du concurrent"), std::string("Aider le voisin a reparer son tracteur"), heroPtr, badGuyPtr, ee::storyType::INGAME);
     ee::Story *story44 = new ee::Story(std::string("Lors de la reparation du tracteur, vous\nremarquez le saboteur au loin qui revient !\nVoulez decider d'aller lui parler"), heroPtr->getDescription() + std::string(" with a farmer repairing a tractor and seeing someone running"), std::string("Lui demander calmement pourquoi il fait ça"), std::string("L'agresser"), heroPtr, badGuyPtr, ee::storyType::INGAME);
     ee::Story *story45 = new ee::Story(std::string("Vous partez chez le concurrent, voulez-vous\nsonner a la sonnette ou entrer en cachette ?"), heroPtr->getDescription() + std::string(" with another farmer in front of an house"), std::string("Sonner"), std::string("Entrer en cachette"), heroPtr, badGuyPtr, ee::storyType::INGAME);
     ee::Story *story46 = new ee::Story(std::string("Vous avez decide d'entrer en cachette,\nmais vous vous faites avoir par un piege\nqu'il avait mis en place, et vous succombez"), heroPtr->getDescription() + std::string(" getting caught by a trap"), std::string(""), std::string(""), heroPtr, badGuyPtr, ee::storyType::LOOSE);
@@ -102,7 +102,7 @@ ee::Story *ee::createStory(std::shared_ptr<ee::Character> heroPtr, std::shared_p
     ee::Story *story61 = new ee::Story(std::string("Vous arrivez au bar. Que voulez-vous boire ?"), heroPtr->getDescription() + std::string(" in a bar"), std::string("Une biere"), std::string("Un soda"), heroPtr, badGuyPtr, ee::storyType::INGAME);
     ee::Story *story62 = new ee::Story(std::string("Vous arrivez au parc. Que voulez-vous faire ?"), heroPtr->getDescription() + std::string(" in a park"), std::string("Faire du running"), std::string("Vous asseoir sur un banc"), heroPtr, badGuyPtr, ee::storyType::INGAME);
     ee::Story *story63 = new ee::Story(std::string("Vous arrivez au bar a pieds sans probleme.\nQue voulez-vous boire ?"), heroPtr->getDescription() + std::string(" in a bar"), std::string("Une biere"), std::string("Un soda"), heroPtr, badGuyPtr, ee::storyType::INGAME);
-    ee::Story *story64 = new ee::Story(std::string("Vous n'arrivez pas a vous arreter apres une\nbiere et enchaînez les boissons alcoolisees.\nVous mourrez d'un coma ethylique."), heroPtr->getDescription() + std::string(" getting drunk, on the ground"), std::string(""), std::string(""), heroPtr, badGuyPtr, ee::storyType::LOOSE);
+    ee::Story *story64 = new ee::Story(std::string("Vous n'arrivez pas a vous arreter apres une\nbiere et enchainez les boissons alcoolisees.\nVous mourrez d'un coma ethylique."), heroPtr->getDescription() + std::string(" getting drunk, on the ground"), std::string(""), std::string(""), heroPtr, badGuyPtr, ee::storyType::LOOSE);
     ee::Story *story65 = new ee::Story(std::string("Apres avoir bu un bon soda, vous sortez du bar,\nmais vous apercevez quelqu'un mettre le\nfeu a une poubelle ! Que faites-vous ?"), heroPtr->getDescription() + std::string(" seeing someone setting fire to a trash can"), std::string("L'arreter"), std::string("eteindre le feu"), heroPtr, badGuyPtr, ee::storyType::INGAME);
     ee::Story *story66 = new ee::Story(std::string("Vous avez decide de partir en randonnee,\net vous voyez une chevre au loin.\nPreferez-vous aller la voir, ou la fuir ?"), heroPtr->getDescription() + std::string(" walking in the mountain, with a goat in the distance"), std::string("Aller voir la chevre"), std::string("Fuir la chevre"), heroPtr, badGuyPtr, ee::storyType::INGAME);
     ee::Story *story67 = new ee::Story(std::string("Vous allez voir la chevre,\nque voulez-vous faire ?"), heroPtr->getDescription() + std::string(" in front of a goat"), std::string("La frapper"), std::string("La caresser"), heroPtr, badGuyPtr, ee::storyType::INGAME);
@@ -120,10 +120,10 @@ ee::Story *ee::createStory(std::shared_ptr<ee::Character> heroPtr, std::shared_p
     story1->setBChoicePtr(story2);
 
     story2->setAChoicePtr(story12);
-    story2->setBChoicePtr(story18);
+    story2->setBChoicePtr(story19);
 
-    story3->setAChoicePtr(story4);
-    story3->setBChoicePtr(story5);
+    story3->setAChoicePtr(story5);
+    story3->setBChoicePtr(story4);
 
     story5->setAChoicePtr(story6);
     story5->setBChoicePtr(story9);
@@ -173,20 +173,20 @@ ee::Story *ee::createStory(std::shared_ptr<ee::Character> heroPtr, std::shared_p
     story90->setAChoicePtr(story91);
     story90->setBChoicePtr(story92);
 
-    story91->setAChoicePtr(story76);
-    story91->setBChoicePtr(story77);
+    story91->setAChoicePtr(story77);
+    story91->setBChoicePtr(story76);
 
-    story92->setAChoicePtr(story76);
-    story92->setBChoicePtr(story77);
+    story92->setAChoicePtr(story95);
+    story92->setBChoicePtr(story94);
 
     story94->setAChoicePtr(story96);
     story94->setBChoicePtr(story97);
 
-    story97->setAChoicePtr(story98);
-    story97->setBChoicePtr(story99);
+    story97->setAChoicePtr(story99);
+    story97->setBChoicePtr(story98);
 
-    story83->setAChoicePtr(story81);
-    story83->setBChoicePtr(story82);
+    story83->setAChoicePtr(story82);
+    story83->setBChoicePtr(story81);
 
     story82->setAChoicePtr(story89);
     story82->setBChoicePtr(story88);
@@ -206,11 +206,11 @@ ee::Story *ee::createStory(std::shared_ptr<ee::Character> heroPtr, std::shared_p
     story_farm->setAChoicePtr(story41);
     story_farm->setBChoicePtr(story24);
 
-    story24->setAChoicePtr(story25);
-    story24->setBChoicePtr(story30);
+    story24->setAChoicePtr(story30);
+    story24->setBChoicePtr(story25);
 
-    story25->setAChoicePtr(story26);
-    story25->setBChoicePtr(story27);
+    story25->setAChoicePtr(story27);
+    story25->setBChoicePtr(story26);
 
     story26->setAChoicePtr(story41);
     story26->setBChoicePtr(story30);
