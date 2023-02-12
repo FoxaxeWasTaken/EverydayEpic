@@ -115,7 +115,7 @@ void ee::Window::drawMenu(ee::Button button, ee::Text text, sf::Sprite bat)
     _window.draw(button.getButton(1));
     sf::Font font;
     sf::FloatRect rect;
-    font.loadFromFile("police.ttf");
+    font.loadFromFile("assets/police.ttf");
     text.getText(0).setFont(font);
     text.getText(1).setFont(font);
 
@@ -170,7 +170,7 @@ void ee::Window::drawPerso(ee::Perso *button)
         _window.draw(button->getPersoButton(i));
     }
     sf::Font font;
-    font.loadFromFile("police.ttf");
+    font.loadFromFile("assets/police.ttf");
 
     sf::FloatRect rect;
     button->getPersonText(18).setFont(font);
@@ -197,7 +197,7 @@ void ee::Window::drawPerso(ee::Perso *button)
 void ee::Window::drawGame(ee::Story *story, ee::Text textStory, sf::Text textSituation, ee::Button & buttonStory)
 {
     sf::Font font;
-    font.loadFromFile("police.ttf");
+    font.loadFromFile("assets/police.ttf");
     textSituation.setString(story->getSituation());
     if (buttonStory.image == true) {
         story->spr.setTexture(*(RequestTexture(story->getDescription(), "512x512")));
@@ -245,7 +245,7 @@ void ee::Window::drawGame(ee::Story *story, ee::Text textStory, sf::Text textSit
 void ee::Window::drawLoose(ee::Story *story, sf::Text textSituation, ee::Button & buttonStory)
 {
     sf::Font font;
-    font.loadFromFile("police.ttf");
+    font.loadFromFile("assets/police.ttf");
     textSituation.setString(story->getSituation());
     textSituation.setCharacterSize(22);
     textSituation.setFillColor(sf::Color::Red);
@@ -285,7 +285,7 @@ void ee::Window::drawLoose(ee::Story *story, sf::Text textSituation, ee::Button 
 void ee::Window::drawWin(ee::Story *story, sf::Text textSituation, ee::Button & buttonStory)
 {
     sf::Font font;
-    font.loadFromFile("police.ttf");
+    font.loadFromFile("assets/police.ttf");
     textSituation.setString(story->getSituation());
     textSituation.setCharacterSize(22);
     textSituation.setFillColor(sf::Color::Green);

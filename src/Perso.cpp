@@ -10,7 +10,7 @@
 ee::Perso::Perso()
 {
     sf::Font font;
-    font.loadFromFile("assets/Bird.ttf");
+    font.loadFromFile("assets/police.ttf");
 
     _choice[0] = createButton(sf::Vector2f(50.0f, 50.0f), sf::Color::Red, sf::Vector2f(412.0f, 242.0f));
     _choice[1] = createButton(sf::Vector2f(50.0f, 50.0f), sf::Color::Red, sf::Vector2f(412.0f, 334.0f));
